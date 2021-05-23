@@ -22,8 +22,10 @@ module.exports = {
     create: async (req, res) => {
         try {
             const books = await db.Book.create(req.body);
+            console.log(req.body);
             return res.json(books);
         } catch (err) {
+            console.log(err);
             return res.status(422).json(err);
         }
     },
